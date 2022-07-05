@@ -4,7 +4,7 @@
   "description": "",
   "main": "/src/index.js",
   "scripts": {
-    "start":"node ./src/index.js",
+    "start": "node ./src/index.js",
     "test": "jest"
   },
   "author": "",
@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^0.27.2",
     "dotenv": "^16.0.1",
-    "jest": "^28.1.2"
+    "jest": "^28.1.2",
+    "moment": "^2.29.3"
   }
 }
