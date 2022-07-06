@@ -1,21 +1,21 @@
 const dotenv = require("dotenv")
 dotenv.config()
 const moment = require("moment")
-const   { leadingZeros} = require("./helper/string")
+const {sendMessage} = require('./api/telegram')
 const {fetchMarketStatus, BASE_URL } = require('./api/cartola')
-//test
-const {getClosingDate} = require("./helper/date")
-// const axios = require('axios');
-
+const {canSendMessage} = require("./bot")
 
 async function main (){
     const data = await  fetchMarketStatus(); 
-    const dataFormaTBr = moment().format('DD/MM/YYYY HH:mm')
     console.log(data)
-    // console.log(dataFormaTBr)
-        // return console.log(fetchMarket)
+    const dataFormaTBr = moment().format('YYYY-MM-DD HH:mm')
 
-    return console.log(getClosingDate(data)) 
+    if(canSendMessage(data, dataFormaTBr)){
+        await sendMessage()
+    }
+    return console.log("merdaco fechado");
+    
+    
 
 }
 main()

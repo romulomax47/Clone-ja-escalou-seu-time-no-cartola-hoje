@@ -11,9 +11,9 @@ async function fetchMarketStatus(){
          if(data instanceof Error) {
             return data
          }
-         const fechamentp = data.fechamento;
-         const status_mercado = data.status_mercado;
-         return {fechamentp, status_mercado};
+         const status_mercado = data.status_mercado
+         const fechamento = data.fechamento
+         return { status_mercado, fechamento}
 } 
 
 
