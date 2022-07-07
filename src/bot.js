@@ -4,7 +4,7 @@ const {difference} = require("./helper/date")
 const { MARKET_STATUS} = require('./const')
 
 function isTheMarketOpen(status){
-    return status === MARKET_STATUS.open
+    return status === MARKET_STATUS.close
 }
 
 
@@ -38,7 +38,7 @@ function isExactPeriod( data, dataFormaTBr){
 }
 
 function canSendMessage(data, dataFormaTBr){
-    return  isExactPeriod(data, dataFormaTBr) && isTheMarketOpen(data.status)
+    return isExactPeriod(data, dataFormaTBr) && isTheMarketOpen(data.status_mercado)
 }
 
-module.exports= {canSendMessage}
+module.exports= {canSendMessage }

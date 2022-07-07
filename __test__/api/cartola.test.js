@@ -23,9 +23,21 @@ describe('gey mercado status', () => {
         const result = await fetchMarketStatus()
 
         expect(axios.get).toHaveBeenCalledWith(`${BASE_URL}/mercado/status`)
-        
         expect(result).toEqual(marketStatusCloseAfternoon)
 
+    })
+
+    it('should return en errr on get the information', async () => {
+        
+        const erroMessage  = "Network Erro"
+        const mockResponse  = new Error(erroMessage)
+
+        axios.get.mockResolvedValueOnce(mockResponse)
+        
+        const resul = await fetchMarketStatus()
+
+        expect(axios.get).toHaveBeenCalledWith(`${BASE_URL}/mercado/status`)
+        expect(resul).toEqual(mockResponse)
     })
 
 
