@@ -14,13 +14,8 @@ const {canSendMessage} = require("./bot")
 async function main (){
     const dataFormaTBr =  moment().format('YYYY-MM-DD HH:mm')
     const data = await fetchMarketStatus();
-    
-    console.log(data)
     if(canSendMessage(data, dataFormaTBr)){
-        console.log("false")
     }
-    else (await sendMessage())
-    return 
-
+    return data
 }
 main()

@@ -8,11 +8,10 @@ const { TELEGRAM_API, TELEGRAM_CHAT_ID, TELEGRAM_MESSAGE, TELEGRAM_TOKEN } = pro
 
 async function sendMessage() {
     const api = `${TELEGRAM_API}/bot${TELEGRAM_TOKEN}/sendMessage`
-    const response = await axios.post(api, { chat_id: TELEGRAM_CHAT_ID, text: TELEGRAM_MESSAGE })
+    const response = await axios.post(api, {chat_id: TELEGRAM_CHAT_ID, text: TELEGRAM_MESSAGE })
         .then(response => response.data)
         .catch(error => error)
-
-        return 
+        return response
 }
 
 module.exports = { sendMessage };
