@@ -2,7 +2,7 @@ const CronJob = require('cron').CronJob
 const job = new CronJob('* * * * * *', () => {
     main()
 })
-job.start()
+// job.start()
 
 const dotenv = require("dotenv")
 dotenv.config()
@@ -15,7 +15,13 @@ async function main (){
     const dataFormaTBr =  moment().format('YYYY-MM-DD HH:mm')
     const data = await fetchMarketStatus();
     if(canSendMessage(data, dataFormaTBr)){
+        console.log('fechado')
+    }else{
+        await sendMessage()
     }
     return data
 }
+
 main()
+
+module.exports = main

@@ -4,7 +4,7 @@ const { difference } = require("./helper/date")
 const { MARKET_STATUS } = require('./const')
 
 function isTheMarketOpen(status) {
-    return status === MARKET_STATUS.close
+    return status === MARKET_STATUS.open
 }
 
 

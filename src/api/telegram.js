@@ -1,14 +1,24 @@
 
-
 const axios = require('axios')
+
+// const app = express()
 const dotenv = require('dotenv')
 dotenv.config()
 
-const { TELEGRAM_API, TELEGRAM_CHAT_ID, TELEGRAM_MESSAGE, TELEGRAM_TOKEN } = process.env
+const telegramApi = process.env.TELEGRAM_API
+const telegramChatId = process.env.TELEGRAM_CHAT_ID
+const telegramMessage = process.env.TELEGRAM_MESSAGE
+const telegramToken = process.env.TELEGRAM_TOKEN
 
-async function sendMessage() {
-    const api = `${TELEGRAM_API}/bot${TELEGRAM_TOKEN}/sendMessage`
-    const response = await axios.post(api, {chat_id: TELEGRAM_CHAT_ID, text: TELEGRAM_MESSAGE })
+
+
+   async function sendMessage() {
+    
+    console.log(telegramChatId)
+
+    const api = `${telegramApi}/bot${telegramToken}/sendMessage`
+
+    const response = await axios.post(api, {chat_id: `${telegramChatId}`, text: `${telegramMessage}` })
         .then(response => response.data)
         .catch(error => error)
         return response
