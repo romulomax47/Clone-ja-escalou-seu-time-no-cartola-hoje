@@ -41,4 +41,4 @@ function canSendMessage(data, dataFormaTBr) {
     return isExactPeriod(data, dataFormaTBr) && isTheMarketOpen(data.status_mercado)
 }
 
-module.exports = { canSendMessage, diffeInHour }
+module.exports = { canSendMessage, diffeInHour, diffInMinute }

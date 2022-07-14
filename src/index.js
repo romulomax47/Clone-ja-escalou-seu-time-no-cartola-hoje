@@ -1,8 +1,8 @@
 const CronJob = require('cron').CronJob
-const job = new CronJob('* * * * * *', () => {
+const job = new CronJob('*/15 * * * * ', () => {
     main()
 })
-// job.start()
+job.start()
 
 const dotenv = require("dotenv")
 dotenv.config()

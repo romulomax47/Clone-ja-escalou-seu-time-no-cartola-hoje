@@ -1,7 +1,6 @@
 
 const axios = require('axios')
 
-// const app = express()
 const dotenv = require('dotenv')
 dotenv.config()
 

@@ -3,7 +3,7 @@ const {MARKET_STATUS} = require('../src/const')
 const marketStatusCloseAfternoon = {
     status_mercado: 1,
     fechamento: {
-      dia: 7,
+      dia:14,
       mes: 7,
       ano: 2022,
       hora: 16,
@@ -15,10 +15,10 @@ const marketStatusCloseAfternoon = {
   const marketStatusCloseEvenig = {
     status_mercado: 1,
     fechamento: {
-      dia: 9,
+      dia: 14,
       mes: 7,
       ano: 2022,
-      hora: 16,
+      hora: 18,
       minuto: 0,
       timestamp: 1657393200
     }
